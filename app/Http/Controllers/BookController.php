@@ -69,7 +69,7 @@ class BookController extends Controller
      */
     public function edit(Book $book)
     {
-        //
+        return view('books.edit',compact('book'));
     }
 
     /**
@@ -81,7 +81,15 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-        //
+         /*validacion de los inputs, que tengan algun dato*/
+         $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        $book->update($request->all());
+        Session::flash('message','Libro Actualizado Correctamente');
+        return redirect()->route('books.index');/*nos redirecciona*/
     }
 
     /**

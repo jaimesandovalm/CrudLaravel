@@ -7,15 +7,16 @@
         <title>Books</title>
 
     <!--Boostrap Css-->
-    <link rel="stylesheet" href="css/bootstrap.min.css">    
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">  
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">  
 </head>
 <body>
 
-<nav class="nav">
-  <a class="nav-link active" href="#">Active</a>
+<nav class="nav bg-custom">
+  <a class="nav-link active" href="{{route('books.index')}}">EBooks</a>
+  <a class="nav-link" href="{{route('books.index')}}">Inicio</a>
   <a class="nav-link" href="#">Link</a>
-  <a class="nav-link" href="#">Link</a>
-  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  
 </nav>
     
     @yield('content')
