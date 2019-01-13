@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+/*esto nos permite crear las rutas del crud*/
+Route::resource('books','BookController');
