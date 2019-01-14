@@ -1,3 +1,9 @@
 .bg-custom{
     background-color: lightblue; 
 }
+
+.botoninput{
+    padding: 4px 6px 5px;
+    border-width: 2px;
+    border-style: outset; 
+}

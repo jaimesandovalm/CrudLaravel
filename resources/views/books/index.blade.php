@@ -23,7 +23,14 @@
             <th scope="row">{{$book->id}}</th>
             <td>{{$book->title}}</td>
             <td>{{$book->description}}</td>
-            <td><a class="btn btn-info" href="{{route('books.edit',$book->id)}}">Editar</a></td>
+            <td><a class="btn btn-info botoninput" href="{{route('books.edit',$book->id)}}"><i class="far fa-edit"></i></a>
+            <form action="{{route('books.destroy',$book->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+
+            <button type="submit" class="btn-sm btn-danger mt-3 " onclick="return confirm('Quiere sacar el Registro?')"><i class="far fa-trash-alt"></i></button>
+            </form>
+            </td>
         </tr>
         @endforeach
     </tbody>
